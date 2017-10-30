@@ -10,15 +10,25 @@
 angular.module('pocSector3FrontApp')
   .controller('MainCtrl', function ($scope, gridFactory) {
     $scope.columns = gridFactory.generateColumnsMock();
+    $scope.selectCellData = [];
     $scope.gridOptions = {
-      enableColumnMenu: false,
-      enableColumnMenus: false,
-      enableFiltering: false,
+      enableColumnMenus: true,
+      enableFiltering: true,
+      enableSelectAll: false,
       enableColumnMoving: false,
+      multiSelect: false,
+      
       paginationPageSizes: [10, 100, 150, 200],
       paginationPageSize: 10,
-      enableSorting: false, 
+      enableSorting: true, 
       columnDefs: $scope.columns,
-      data: gridFactory.generateDataJsonMock()
+      data: gridFactory.generateDataJsonMock(),
+      onRegisterApi: function(gridApi){
+        $scope.gridApi = gridApi;
+
+        gridApi.selection.on.rowSelectionChanged($scope,function(row){
+          $scope.selectCellData = row.entity;
+        });
+      }
     };
   });

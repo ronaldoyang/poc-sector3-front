@@ -9,4 +9,4 @@
  * Main module of the application.
  */
 angular
-  .module('pocSector3FrontApp', ['ui.grid']);
+  .module('pocSector3FrontApp', ['ui.grid', 'ui.grid.selection', 'ui.grid.cellNav']);

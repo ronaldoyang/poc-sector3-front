@@ -17,9 +17,9 @@ angular.module('pocSector3FrontApp')
         {"name": "coluna2", "displayName": "Coluna 2", "size": 10, "type": "string", "class": ""},
         {"name": "coluna3", "displayName": "Coluna 3", "size": 15, "type": "string", "class": ""},
         {"name": "coluna4", "displayName": "Coluna 4", "size": 1, "type": "string", "class": ""}
-      ]
+      ];
       return columns;
-    }
+    };
 
     factory.generateDataJsonMock = function () {
       var data = [
@@ -30,7 +30,7 @@ angular.module('pocSector3FrontApp')
         {"coluna1": 5, "coluna2": "52", "coluna3": "53", "coluna4": "54"}
       ];
       return data; 
-    }
+    };
 
     return factory;
   });

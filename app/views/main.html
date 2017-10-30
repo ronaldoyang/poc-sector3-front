@@ -1,7 +1,7 @@
 <form ng-controller="MainCtrl">
-  <div ui-grid="gridOptions"  class="myGrid"></div>
+  <div ui-grid="gridOptions" ui-grid-selection ui-grid-cellnav class="myGrid"></div>
   <div ng-repeat="column in columns">
     <label>{{ column.displayName }}</label>
-    <input type = "{{ column.type }}" >
+    <input type = "{{ column.type }}" ng-model="selectCellData[column.name]">
   </div>
 </form>
